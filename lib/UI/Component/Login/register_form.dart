@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:univercity/Public/colors.dart';
+import 'package:univercity/UI/Component/Buttons/btn.dart';
+import 'package:univercity/UI/Component/Inputs/input.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -9,7 +11,8 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 200,
+      height: 210,
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(width: 1,color: Colors.black),
@@ -21,27 +24,43 @@ class LoginForm extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('نام کاربری'),
-              SizedBox(width: 10),
               Container(
-                  width: 60,
-                  height: 15,
-                  child: TextField())
+                  width: 270,
+                  height: 50,
+                  child: Input(
+                    width: 280,
+                    height: 50,
+                    radius: 15,
+                    hint: "نام کاربری",
+                  )
+              )
             ],
           ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('رمز ورود'),
-              SizedBox(width: 10),
               Container(
-                  width: 60,
-                  height: 15,
-                  child: TextField()
+                  width: 270,
+                  height: 50,
+                  child: Input(
+                    width: 280,
+                    height: 50,
+                    radius: 15,
+
+                    hint: 'رمز ورود',
+                  )
               )
             ],
           ),
+          Spacer(),
+          Btn(
+            btnType.custom,
+            width: 280,
+            height: 50,
+            color: Colors.white,
+            text: 'ثبت نام',
+          )
         ],
       ),
     );

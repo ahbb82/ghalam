@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:univercity/UI/Veiw/Login/Register.dart';
 import 'package:univercity/UI/Veiw/Login/splash.dart';
 
 void main() {
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
       //   print('2');
       // },
       routes: {
-        '/':(context)=>Splash(),
+        '/':(context)=>Register('dvdf'),
       },
     );
   }
