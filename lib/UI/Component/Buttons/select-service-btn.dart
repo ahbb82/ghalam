@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:univercity/UI/Veiw/Login/login.dart';
+import 'package:univercity/UI/Veiw/Login/Register.dart';
 
 class SelectServicesBtn extends StatelessWidget {
   String title;
@@ -10,7 +10,7 @@ class SelectServicesBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login(title)));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Register(title)));
       },
       child: Container(
         width: 200,
