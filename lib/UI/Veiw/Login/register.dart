@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Headers/login_header.dart';
-import 'package:univercity/UI/Component/Login/login_form.dart';
 import 'package:univercity/UI/Component/Login/register_form.dart';
 
-class Login extends StatelessWidget {
-  Login(this.type);
+class Register extends StatelessWidget {
+  Register(this.type);
 
   String type;
 
@@ -15,9 +14,9 @@ class Login extends StatelessWidget {
       backgroundColor: login_background.withOpacity(0.4),
       body: Column(
         children: [
-          LoginHeader(type:type),
+          LoginHeader(register: true),
           Spacer(),
-          LoginForm(),
+          RegisterForm(),
           Spacer(),
         ],
       ),

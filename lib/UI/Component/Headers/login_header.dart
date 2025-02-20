@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:univercity/Public/colors.dart';
 
 class LoginHeader extends StatelessWidget {
-  LoginHeader(this.type);
+  bool register;
   String type;
+  LoginHeader({this.type='',this.register=false});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -24,7 +26,7 @@ class LoginHeader extends StatelessWidget {
               child: Icon(Icons.arrow_back,size: 28)
           ),
           Spacer(),
-          Text(' ورود کاربر به عنوان ${type}',
+          Text(register?'ثبت نام کاربر':' ورود کاربر به عنوان ${type}',
             style: TextStyle(fontSize: 28,fontWeight: FontWeight.w400,color: Colors.black),
           ),
           Spacer(),
