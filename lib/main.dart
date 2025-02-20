@@ -5,6 +5,8 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:univercity/UI/Veiw/Login/register.dart';
 import 'package:univercity/UI/Veiw/Login/splash.dart';
+import 'package:univercity/UI/Veiw/Reading/reading_story.dart';
+import 'package:univercity/UI/Veiw/Reading/topic_lists.dart';
 
 void main() {
   runApp(MyApp());
