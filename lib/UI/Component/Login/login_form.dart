@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
+import 'package:univercity/UI/Veiw/Reading/topic_lists.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+  String type;
+  LoginForm(this.type,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +62,13 @@ class LoginForm extends StatelessWidget {
             height: 50,
             color: Colors.white,
             text: 'ورود',
+            onClick: (){
+              type == 'خواننده'?
+              Navigator.push(context, MaterialPageRoute(builder: (builder)=>TopicsListPage())):
+              (){
+
+              };
+            },
           )
         ],
       ),

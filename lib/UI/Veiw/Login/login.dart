@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
         children: [
           LoginHeader(type:type),
           Spacer(),
-          LoginForm(),
+          LoginForm(type),
           Spacer(),
         ],
       ),
