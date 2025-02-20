@@ -48,7 +48,7 @@ class Btn extends StatelessWidget {
               elevation: MaterialStateProperty.all(0),
                   padding: MaterialStateProperty.all(EdgeInsets.zero)
 
-            ), child: Text(text!,style: fontType??TextStyle(fontSize: 20,color: login_background,fontWeight: FontWeight.w600),),
+            ), child: Text(text!,style: fontType??TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w600),),
           ),
         ),
     );

@@ -14,9 +14,9 @@ class Register extends StatelessWidget {
       backgroundColor: login_background.withOpacity(0.4),
       body: Column(
         children: [
-          LoginHeader(type),
+          LoginHeader(register: true),
           Spacer(),
-          LoginForm(),
+          RegisterForm(),
           Spacer(),
         ],
       ),

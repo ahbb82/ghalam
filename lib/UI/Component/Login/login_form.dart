@@ -3,21 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
-import 'package:univercity/UI/Component/Selector/radio-group.dart';
 
-class RegisterForm extends StatelessWidget {
-  const RegisterForm({Key? key}) : super(key: key);
+class LoginForm extends StatelessWidget {
+  const LoginForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 280,
+      height: 210,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(width: 1,color: Colors.black),
-        color: login_background
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(width: 1,color: Colors.black),
+          color: login_background
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -48,18 +47,11 @@ class RegisterForm extends StatelessWidget {
                     width: 280,
                     height: 50,
                     radius: 15,
+
                     hint: 'رمز ورود',
                   )
               )
             ],
-          ),
-          SizedBox(height: 10),
-          RadioGroup(
-            true,
-            {
-              'خواننده': true,
-              'نویسنده': false,
-            },
           ),
           Spacer(),
           Btn(
@@ -67,7 +59,7 @@ class RegisterForm extends StatelessWidget {
             width: 280,
             height: 50,
             color: Colors.white,
-            text: 'ثبت نام',
+            text: 'ورود',
           )
         ],
       ),
