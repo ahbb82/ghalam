@@ -4,6 +4,7 @@ import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
 import 'package:univercity/UI/Veiw/Reading/topic_lists.dart';
+import 'package:univercity/UI/Veiw/Writing/writed_list.dart';
 
 class LoginForm extends StatelessWidget {
   String type;
@@ -65,6 +66,8 @@ class LoginForm extends StatelessWidget {
             onClick: (){
               type == 'خواننده'?
               Navigator.push(context, MaterialPageRoute(builder: (builder)=>TopicsListPage())):
+              type == 'نویسنده'?
+              Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritedList())):
               (){
 
               };
