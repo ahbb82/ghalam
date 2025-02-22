@@ -7,6 +7,8 @@ import 'package:univercity/UI/Veiw/Login/register.dart';
 import 'package:univercity/UI/Veiw/Login/splash.dart';
 import 'package:univercity/UI/Veiw/Reading/reading_story.dart';
 import 'package:univercity/UI/Veiw/Reading/topic_lists.dart';
+import 'package:univercity/UI/Veiw/Writing/writed_list.dart';
+import 'package:univercity/UI/Veiw/Writing/writing_story.dart';
 
 void main() {
   runApp(MyApp());
