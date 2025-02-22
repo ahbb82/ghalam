@@ -54,7 +54,6 @@ class _InputState extends State<Input> {
       width: this.widget.width??900,
       alignment: Alignment.center,
       // decoration: BoxDecoration(boxShadow: widget.shadow),
-
       child: TextFormField(
          onTap: (){
            if(widget.onTap!=null)
@@ -81,7 +80,7 @@ class _InputState extends State<Input> {
             borderRadius: BorderRadius.circular(widget.radius!),
           ):InputBorder.none,
           enabledBorder:OutlineInputBorder(
-            borderSide: BorderSide(color:  widget.hasBorder2 == true ? itemColor36 :
+            borderSide: BorderSide(color:  widget.hasBorder2 == true ? itemColor1 :
             widget.hasBorder3 == true ? itemColor39 :  Colors.transparent   ,width: 1),
             borderRadius: BorderRadius.circular(widget.radius!),
           ),
