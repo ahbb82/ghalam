@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:univercity/UI/Veiw/Admin/admin_list.dart';
 import 'package:univercity/UI/Veiw/Login/register.dart';
 import 'package:univercity/UI/Veiw/Login/splash.dart';
 import 'package:univercity/UI/Veiw/Reading/reading_story.dart';
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
       //   print('2');
       // },
       routes: {
-        '/':(context)=>Splash(),
+        '/':(context)=>AdminList(),
       },
     );
   }

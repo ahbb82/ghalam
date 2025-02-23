@@ -6,13 +6,14 @@ import 'package:univercity/UI/Component/Writing/writed_list_item.dart';
 import 'package:univercity/UI/Veiw/Writing/writing_story.dart';
 
 class WritedList extends StatelessWidget {
-  const WritedList({Key? key}) : super(key: key);
+  bool withAdd;
+  WritedList(this.withAdd,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: InkWell(
+      floatingActionButtonLocation: withAdd?FloatingActionButtonLocation.startFloat:null,
+      floatingActionButton: withAdd?InkWell(
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritingStory()));
         },
@@ -25,11 +26,11 @@ class WritedList extends StatelessWidget {
           ),
           child: Icon(Icons.add,color: Colors.white,size: 30,),
         ),
-      ),
+      ):null,
       backgroundColor: login_background.withOpacity(0.1),
       body: Column(
         children: [
-          MainHeader('داستان های نویسنده'),
+          MainHeader('داستان ها'),
           Expanded(
             child: Container(
                 padding: EdgeInsets.all(15),
