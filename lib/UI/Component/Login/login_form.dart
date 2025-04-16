@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/auth_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
@@ -36,6 +37,9 @@ class LoginForm extends StatelessWidget {
                     width: 280,
                     height: 50,
                     radius: 15,
+                    onChange: (text){
+                      AuthController.username = text;
+                    },
                     hint: "نام کاربری",
                   )
               )
@@ -52,7 +56,9 @@ class LoginForm extends StatelessWidget {
                     width: 280,
                     height: 50,
                     radius: 15,
-
+                    onChange: (text){
+                      AuthController.password = text;
+                    },
                     hint: 'رمز ورود',
                   )
               )
@@ -71,7 +77,7 @@ class LoginForm extends StatelessWidget {
               type == 'نویسنده'?
               Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritedList(true))):
               type == 'ادمین'?
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>AdminList())):
+              AuthController.AdminLogin():
               (){
 
               };

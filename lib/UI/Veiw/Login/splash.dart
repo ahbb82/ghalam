@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/Public/images.dart';
+import 'package:univercity/Public/public.dart';
 import 'package:univercity/UI/Component/General/img.dart';
 import 'package:univercity/UI/Veiw/Login/select-services.dart';
 
@@ -31,7 +32,7 @@ class _SplashState extends State<Splash> {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Img(Logo,width: 150),
+              Img(appLogo,width: 150),
               SizedBox(height: 20),
               Text('قلم',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,color: Colors.black),)
             ],
