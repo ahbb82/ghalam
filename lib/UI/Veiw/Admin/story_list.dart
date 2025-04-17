@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:univercity/Controller/admin_controller.dart';
-import 'package:univercity/Controller/writer_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Headers/main_header.dart';
-import 'package:univercity/UI/Component/Reading/topic_list_item.dart';
 import 'package:univercity/UI/Component/Writing/writed_list_item.dart';
 import 'package:univercity/UI/Veiw/Writing/writing_story.dart';
 
-class WritedList extends StatelessWidget {
+class StoryList extends StatelessWidget {
   bool withAdd;
-  WritedList(this.withAdd,{Key? key}) : super(key: key);
+  StoryList(this.withAdd,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +39,7 @@ class WritedList extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        for(var story in WriterController.writerStoriesList)
+                        for(var story in AdminController.storiesList)
                           WritedListItem(story)
                       ],
                     ),

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:univercity/Controller/admin_controller.dart';
+import 'package:univercity/Controller/reader_controller.dart';
+import 'package:univercity/Controller/writer_controller.dart';
 import 'package:univercity/Helper/api_service.dart';
 import 'package:univercity/Helper/snackbar.dart';
 import 'package:univercity/Public/public.dart';
@@ -43,6 +45,9 @@ class AuthController extends GetxController{
       "password": LoginPassword,
     });
     showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    if(res.data['success']==true)
+      ReaderController.readerId = res.data['body'];
+    print(ReaderController.readerId);
   }
 
   static WriterLogin() async{
@@ -50,6 +55,8 @@ class AuthController extends GetxController{
       "userName": loginUsername,
       "password": LoginPassword,
     });
-    showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    await showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    WriterController.GetWriterStories(res.data['body']);
+    print(res.data['success']);
   }
 }

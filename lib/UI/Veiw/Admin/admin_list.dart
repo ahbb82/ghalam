@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Admin/admin_list_btn.dart';
+import 'package:univercity/UI/Veiw/Admin/story_list.dart';
 import 'package:univercity/UI/Veiw/Admin/users_list.dart';
 import 'package:univercity/UI/Veiw/Writing/writed_list.dart';
 
@@ -26,7 +27,7 @@ class AdminList extends StatelessWidget {
             }),
             AdminListBtn('داستان ها', ()async{
               await AdminController.GetStories();
-              Get.to(WritedList(false));
+              Get.to(StoryList(false));
             }
             ),
           ],
