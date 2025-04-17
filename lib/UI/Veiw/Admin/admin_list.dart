@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Admin/admin_list_btn.dart';
@@ -23,9 +24,9 @@ class AdminList extends StatelessWidget {
             AdminListBtn('کاربران', (){
               AdminController.GetUsers();
             }),
-            AdminListBtn('داستان ها', (){
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritedList(false)));
-              print('object');
+            AdminListBtn('داستان ها', ()async{
+              await AdminController.GetStories();
+              Get.to(WritedList(false));
             }
             ),
           ],

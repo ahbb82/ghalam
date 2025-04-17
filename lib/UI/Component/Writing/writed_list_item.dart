@@ -1,16 +1,21 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:univercity/Model/story.dart';
 import 'package:univercity/UI/Veiw/Writing/delete_story.dart';
 
 class WritedListItem extends StatelessWidget {
-  const WritedListItem({Key? key}) : super(key: key);
+  Story story;
+  WritedListItem(this.story,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (builder)=>DeleteStory()));
+        Navigator.push(context, MaterialPageRoute(builder: (builder)=>DeleteStory(story)));
       },
       child: Container(
         width: 900,
@@ -27,7 +32,7 @@ class WritedListItem extends StatelessWidget {
             SizedBox(width: 10),
             Expanded(
                 child: Text(
-                  'نام داستان',
+                  story.title!,
                   style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 15),
                   maxLines: 1,
                   overflow: TextOverflow.fade,

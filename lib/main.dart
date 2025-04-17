@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
       //   print('2');
       // },
       routes: {
-        '/':(context)=>WritedList(true),
+        '/':(context)=>Splash(),
       },
     );
   }

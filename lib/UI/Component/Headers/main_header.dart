@@ -4,7 +4,7 @@ import 'package:univercity/Public/colors.dart';
 
 class MainHeader extends StatelessWidget {
   String topic;
-  MainHeader(this.topic,{Key? key}) : super(key: key);
+  MainHeader(this.topic);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,7 @@ class MainHeader extends StatelessWidget {
         children: [
           SizedBox(width: 5),
           InkWell(
-              onTap: (){
-                Navigator.pop(context);
-              },
+              onTap: (){Navigator.pop(context);},
               child: Icon(Icons.arrow_back,size: 20)
           ),
           Spacer(),
