@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:univercity/Controller/admin_controller.dart';
+import 'package:univercity/Controller/writer_controller.dart';
 import 'package:univercity/Model/story.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Headers/main_header.dart';
 
 class DeleteStory extends StatelessWidget {
   Story story;
-  DeleteStory(this.story,{Key? key}) : super(key: key);
+  int type;
+  DeleteStory(this.story,this.type,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class DeleteStory extends StatelessWidget {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         onTap: ()async{
-          AdminController.DeleteSrory(story.id!);
+          type == 2 ?AdminController.DeleteSrory(story.id!):WriterController.DeleteSrory(story.id!);
         },
         child: Container(
           width: 50,

@@ -42,7 +42,7 @@ class StoryList extends StatelessWidget {
                         ()=> Column(
                         children: [
                           for(var story in AdminController.storiesList)
-                            WritedListItem(story)
+                            WritedListItem(story,2)
                         ],
                       ),
                     ),

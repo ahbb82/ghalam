@@ -6,7 +6,8 @@ import 'package:univercity/UI/Veiw/Writing/delete_story.dart';
 
 class WritedListItem extends StatelessWidget {
   Story story;
-  WritedListItem(this.story,{Key? key}) : super(key: key);
+  int type;
+  WritedListItem(this.story,this.type,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class WritedListItem extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (builder)=>DeleteStory(story)));
+        Navigator.push(context, MaterialPageRoute(builder: (builder)=>DeleteStory(story,type)));
       },
       child: Container(
         width: 900,

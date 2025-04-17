@@ -38,6 +38,18 @@ class WriterController extends GetxController{
       "text": text
     });
     showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
-    GetWriterStories(writer_id);
+    Future.delayed(Duration(seconds: 3),() {
+      GetWriterStories(writer_id);
+    });
+  }
+
+  static DeleteSrory(int id)async{
+    var res = await ApiService.post('Admin/DeleteStory',{
+      "id": id
+    });
+    showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    Future.delayed(Duration(seconds: 2),() {
+      GetWriterStories(writer_id);
+    });
   }
 }

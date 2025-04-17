@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Controller/writer_controller.dart';
 import 'package:univercity/Public/colors.dart';
@@ -39,11 +40,13 @@ class WritedList extends StatelessWidget {
                 child: ScrollConfiguration(
                   behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
                   child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        for(var story in WriterController.writerStoriesList)
-                          WritedListItem(story)
-                      ],
+                    child: Obx(
+                        ()=> Column(
+                        children: [
+                          for(var story in WriterController.writerStoriesList)
+                            WritedListItem(story,1)
+                        ],
+                      ),
                     ),
                   ),
                 )
