@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Admin/users_btn.dart';
 import 'package:univercity/UI/Component/Headers/main_header.dart';
@@ -21,8 +22,8 @@ class UsersList extends StatelessWidget {
               children: [
                 MainHeader('لیست کاربران'),
                 SizedBox(height: 10),
-                for(int i=0;i<20;i++)
-                  UsersBtn()
+                for(var user in AdminController.usersList)
+                  UsersBtn(user)
               ],
             ),
           ),
