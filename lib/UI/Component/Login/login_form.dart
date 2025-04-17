@@ -38,7 +38,7 @@ class LoginForm extends StatelessWidget {
                     height: 50,
                     radius: 15,
                     onChange: (text){
-                      AuthController.username = text;
+                      AuthController.loginUsername = text;
                     },
                     hint: "نام کاربری",
                   )
@@ -57,7 +57,7 @@ class LoginForm extends StatelessWidget {
                     height: 50,
                     radius: 15,
                     onChange: (text){
-                      AuthController.password = text;
+                      AuthController.LoginPassword = text;
                     },
                     hint: 'رمز ورود',
                   )

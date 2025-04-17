@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/auth_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
@@ -33,6 +34,9 @@ class RegisterForm extends StatelessWidget {
                     height: 50,
                     radius: 15,
                     hint: "نام کاربری",
+                    onChange: (text){
+                      AuthController.registerUsername = text;
+                    },
                   )
               )
             ],
@@ -49,6 +53,9 @@ class RegisterForm extends StatelessWidget {
                     height: 50,
                     radius: 15,
                     hint: 'رمز ورود',
+                    onChange: (text){
+                      AuthController.registerPassword = text;
+                    },
                   )
               )
             ],
@@ -60,6 +67,9 @@ class RegisterForm extends StatelessWidget {
               'خواننده': true,
               'نویسنده': false,
             },
+            onChange: (value){
+              AuthController.registerIswrite = value;
+            },
           ),
           Spacer(),
           Btn(
@@ -68,6 +78,7 @@ class RegisterForm extends StatelessWidget {
             height: 50,
             color: Colors.white,
             text: 'ثبت نام',
+            onClick: () =>  AuthController.Register(),
           )
         ],
       ),
