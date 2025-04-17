@@ -64,8 +64,8 @@ class RegisterForm extends StatelessWidget {
           RadioGroup(
             true,
             {
-              'خواننده': true,
-              'نویسنده': false,
+              'نویسنده': true,
+              'خواننده': false,
             },
             onChange: (value){
               AuthController.registerIswrite = value;

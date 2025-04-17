@@ -73,9 +73,9 @@ class LoginForm extends StatelessWidget {
             text: 'ورود',
             onClick: (){
               type == 'خواننده'?
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>TopicsListPage())):
+              AuthController.ReaderLogin():
               type == 'نویسنده'?
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritedList(true))):
+              AuthController.WriterLogin():
               type == 'ادمین'?
               AuthController.AdminLogin():
               (){

@@ -36,4 +36,19 @@ class AuthController extends GetxController{
     showSnackbar(snackTypes.error, 'نام کاربری اشتباه است .');}
   }
 
+  static ReaderLogin() async{
+    var res = await ApiService.post("Authentication/ReaderLogin", {
+      "userName": loginUsername,
+      "password": LoginPassword,
+    });
+    showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+  }
+
+  static WriterLogin() async{
+    var res = await ApiService.post("Authentication/WriterLogin", {
+      "userName": loginUsername,
+      "password": LoginPassword,
+    });
+    showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+  }
 }
