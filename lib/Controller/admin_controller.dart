@@ -7,8 +7,8 @@ import 'package:univercity/UI/Veiw/Admin/users_list.dart';
 import 'package:univercity/UI/Veiw/Writing/writed_list.dart';
 
 class AdminController extends GetxController{
-  static List<User> usersList = [];
-  static List<Story> storiesList = [];
+  static final List usersList = <User>[].obs;
+  static final List storiesList = <Story>[].obs;
 
   static GetUsers ()async{
     var res = await ApiService.get('Admin/GetUser');
@@ -36,6 +36,7 @@ class AdminController extends GetxController{
       "id": id
     });
     showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    GetUsers();
   }
 
   static DeleteSrory(int id)async{
@@ -43,5 +44,6 @@ class AdminController extends GetxController{
       "id": id
     });
     showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    GetStories();
   }
 }

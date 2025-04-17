@@ -22,12 +22,14 @@ class UsersList extends StatelessWidget {
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
                 child: SingleChildScrollView(
-                  child: Column(
-                      children: [
-                        SizedBox(height: 10),
-                        for(var user in AdminController.usersList)
-                          UsersBtn(user)
-                      ],
+                  child: Obx(
+                      () => Column(
+                        children: [
+                          SizedBox(height: 10),
+                          for(var user in AdminController.usersList)
+                            UsersBtn(user)
+                        ],
+                    ),
                   ),
                 ),
               ),

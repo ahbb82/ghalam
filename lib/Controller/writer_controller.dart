@@ -4,11 +4,13 @@ import 'package:univercity/Helper/snackbar.dart';
 import 'package:univercity/Model/story.dart';
 import 'package:univercity/UI/Veiw/Writing/writed_list.dart';
 
-int writer_id = 0;
+
 
 class WriterController extends GetxController{
 
-  static List<Story> writerStoriesList = [];
+  static int writer_id = 0;
+
+  static final List writerStoriesList = <Story>[].obs;
 
   static String title = '';
   static String text = '';
@@ -26,6 +28,7 @@ class WriterController extends GetxController{
     if(res.data['success']=true)
       Get.to(WritedList(true));
     writer_id = num;
+    print(writer_id);
   }
 
   static AddStory()async{
@@ -35,5 +38,6 @@ class WriterController extends GetxController{
       "text": text
     });
     showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
+    GetWriterStories(writer_id);
   }
 }

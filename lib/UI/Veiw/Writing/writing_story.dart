@@ -50,7 +50,7 @@ class WritingStory extends StatelessWidget {
             highlightColor: Colors.transparent,
             onTap: (){
               WriterController.AddStory();
-              print(writer_id);
+              print(WriterController.writer_id);
             },
             child: Container(
               height: 60,

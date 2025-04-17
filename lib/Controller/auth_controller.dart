@@ -58,6 +58,7 @@ class AuthController extends GetxController{
     });
     await showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
     WriterController.GetWriterStories(res.data['body']);
+
     print(res.data['success']);
   }
 }

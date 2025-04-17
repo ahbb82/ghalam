@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Headers/main_header.dart';
@@ -37,11 +38,13 @@ class StoryList extends StatelessWidget {
                 child: ScrollConfiguration(
                   behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
                   child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        for(var story in AdminController.storiesList)
-                          WritedListItem(story)
-                      ],
+                    child: Obx(
+                        ()=> Column(
+                        children: [
+                          for(var story in AdminController.storiesList)
+                            WritedListItem(story)
+                        ],
+                      ),
                     ),
                   ),
                 )
