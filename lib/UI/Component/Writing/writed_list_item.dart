@@ -19,7 +19,7 @@ class WritedListItem extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(width: 1,color: Colors.black26),
-            boxShadow: [BoxShadow(color: Colors.black38,blurRadius: 2,offset: Offset(1, 1),spreadRadius: 1)],
+            // boxShadow: [BoxShadow(color: Colors.black38,blurRadius: 2,offset: Offset(0, 0),spreadRadius: 1)],
             borderRadius: BorderRadius.circular(5)
         ),
         child: Row(
