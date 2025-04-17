@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:univercity/Public/public.dart';
-import
 
 class ApiService {
   static final Dio dio = Dio();
