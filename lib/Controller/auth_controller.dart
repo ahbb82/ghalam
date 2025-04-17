@@ -10,6 +10,7 @@ import 'package:univercity/Helper/api_service.dart';
 import 'package:univercity/Helper/snackbar.dart';
 import 'package:univercity/Public/public.dart';
 import 'package:univercity/UI/Veiw/Admin/admin_list.dart';
+import 'package:univercity/UI/Veiw/Reading/topic_lists.dart';
 
 class AuthController extends GetxController{
 
@@ -45,9 +46,9 @@ class AuthController extends GetxController{
       "password": LoginPassword,
     });
     showSnackbar(res.data['success']?snackTypes.success:snackTypes.error, res.data['message']);
-    if(res.data['success']==true)
-      ReaderController.readerId = res.data['body'];
-    print(ReaderController.readerId);
+    ReaderController.reader_id = res.data['body'];
+    await AdminController.GetStories();
+    Get.to(TopicsListPage());
   }
 
   static WriterLogin() async{

@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/reader_controller.dart';
+import 'package:univercity/Model/story.dart';
 import 'package:univercity/UI/Veiw/Reading/reading_story.dart';
 
 class TopicListItem extends StatelessWidget {
-  const TopicListItem({Key? key}) : super(key: key);
+  Story story;
+  TopicListItem(this.story,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (builder)=>ReadingStoryPage()));
+        ReaderController.story_id = story.id!;
+        ReaderController.IsLiked(story);
       },
       child: Container(
         width: 900,
@@ -26,7 +30,7 @@ class TopicListItem extends StatelessWidget {
             SizedBox(width: 10),
             Expanded(
                 child: Text(
-                  'نام داستان',
+                  story.title!,
                   style: TextStyle(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 15),
                   maxLines: 1,
                   overflow: TextOverflow.fade,
