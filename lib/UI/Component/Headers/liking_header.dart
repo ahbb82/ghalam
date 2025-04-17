@@ -40,7 +40,6 @@ class _LikingHeaderState extends State<LikingHeader> {
           Spacer(),
           InkWell(
               onTap: (){
-                // ReaderController.kk.value = !ReaderController.kk.value;
                 setState(() {
                   ReaderController.is_liked.value?ReaderController.DisLiking():ReaderController.Liking();
                 });
