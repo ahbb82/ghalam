@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:univercity/Controller/admin_controller.dart';
+import 'package:univercity/Controller/reader_controller.dart';
 import 'package:univercity/Controller/writer_controller.dart';
 import 'package:univercity/Model/story.dart';
 import 'package:univercity/Public/colors.dart';
@@ -20,6 +21,7 @@ class DeleteStory extends StatelessWidget {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         onTap: ()async{
+          await ReaderController.LikeCounter(story.id!);
           type == 2 ?AdminController.DeleteSrory(story.id!):WriterController.DeleteSrory(story.id!);
         },
         child: Container(
@@ -35,7 +37,7 @@ class DeleteStory extends StatelessWidget {
       backgroundColor: Colors.white60,
       body: Column(
         children: [
-          MainHeader(story.title!),
+          MainHeader(story.title!,counter: true,),
           Expanded(
             child: Container(
               color: Colors.white,

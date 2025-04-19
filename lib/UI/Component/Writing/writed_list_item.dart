@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/reader_controller.dart';
 import 'package:univercity/Model/story.dart';
 import 'package:univercity/UI/Veiw/Writing/delete_story.dart';
 
@@ -15,7 +16,8 @@ class WritedListItem extends StatelessWidget {
       hoverColor: Colors.transparent,
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
-      onTap: (){
+      onTap: ()async{
+        await ReaderController.LikeCounter(story.id!);
         Navigator.push(context, MaterialPageRoute(builder: (builder)=>DeleteStory(story,type)));
       },
       child: Container(

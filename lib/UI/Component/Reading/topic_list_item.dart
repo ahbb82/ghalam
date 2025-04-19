@@ -11,8 +11,9 @@ class TopicListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: ()async{
         ReaderController.story_id = story.id!;
+        await ReaderController.LikeCounter(story.id!);
         ReaderController.IsLiked(story);
       },
       child: Container(

@@ -10,7 +10,8 @@ import 'package:univercity/UI/Component/General/img.dart';
 
 class LikingHeader extends StatefulWidget {
   String title;
-  LikingHeader(this.title);
+  bool counter;
+  LikingHeader(this.title,{this.counter = false});
 
   @override
   State<LikingHeader> createState() => _LikingHeaderState();
@@ -37,6 +38,9 @@ class _LikingHeaderState extends State<LikingHeader> {
           Text(widget.title,
             style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Colors.black),
           ),
+          SizedBox(width: 5),
+          Text('تعداد لایک : ',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w300,color: Colors.black),),
+          Text('${ReaderController.count}',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w300,color: Colors.black),),
           Spacer(),
           InkWell(
               onTap: (){
