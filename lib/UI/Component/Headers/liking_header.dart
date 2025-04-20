@@ -23,7 +23,7 @@ class _LikingHeaderState extends State<LikingHeader> {
     var size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      color: login_background.withOpacity(0.6),
+      color: login_background.withOpacity(0.4),
       height: 50,
       child: Row(
         children: [

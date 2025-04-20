@@ -16,9 +16,9 @@ class RegisterForm extends StatelessWidget {
       height: 280,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(width: 1,color: Colors.black),
-        color: login_background
+        color: Colors.transparent
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

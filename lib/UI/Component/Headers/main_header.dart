@@ -13,7 +13,7 @@ class MainHeader extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       width: size.width,
-      color: login_background,
+      color: login_background.withOpacity(0.5),
       height: 50,
       child: Row(
         children: [
