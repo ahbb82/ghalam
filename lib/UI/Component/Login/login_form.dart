@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/auth_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
@@ -19,9 +20,9 @@ class LoginForm extends StatelessWidget {
       height: 210,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(width: 1,color: Colors.black),
-          color: login_background
+          color: Colors.transparent
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,6 +37,9 @@ class LoginForm extends StatelessWidget {
                     width: 280,
                     height: 50,
                     radius: 15,
+                    onChange: (text){
+                      AuthController.loginUsername = text;
+                    },
                     hint: "نام کاربری",
                   )
               )
@@ -52,7 +56,9 @@ class LoginForm extends StatelessWidget {
                     width: 280,
                     height: 50,
                     radius: 15,
-
+                    onChange: (text){
+                      AuthController.LoginPassword = text;
+                    },
                     hint: 'رمز ورود',
                   )
               )
@@ -67,11 +73,11 @@ class LoginForm extends StatelessWidget {
             text: 'ورود',
             onClick: (){
               type == 'خواننده'?
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>TopicsListPage())):
+              AuthController.ReaderLogin():
               type == 'نویسنده'?
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritedList(true))):
+              AuthController.WriterLogin():
               type == 'ادمین'?
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>AdminList())):
+              AuthController.AdminLogin():
               (){
 
               };

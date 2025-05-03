@@ -9,9 +9,19 @@ class SelectServices extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: login_background.withOpacity(0.4),
+      // backgroundColor: login_background.withOpacity(0.4),
       body: Container(
         width: size.width,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [
+                login_background,
+                login_background.withOpacity(0.1)
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter
+          )
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

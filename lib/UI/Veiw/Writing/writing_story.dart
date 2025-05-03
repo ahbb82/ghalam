@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/writer_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
 
@@ -18,7 +19,9 @@ class WritingStory extends StatelessWidget {
               SizedBox(width: 15),
               Text('عنوان',style: TextStyle(fontSize: 26,fontWeight: FontWeight.w400,color: Colors.black),),
               SizedBox(width: 30),
-              Input(height: 50,width: size.width-120,hasBorder2: true,),
+              Input(height: 50,width: size.width-120,hasBorder2: true,onChange: (txt){
+                WriterController.title = txt;
+              },),
               SizedBox(width: 15),
             ],
           ),
@@ -33,18 +36,29 @@ class WritingStory extends StatelessWidget {
                     ],
                   ),
                   SizedBox(width: 15),
-                  Input(width: size.width-120,hasBorder2: true,lines: 50,),
+                  Input(width: size.width-120,hasBorder2: true,lines: 50,onChange: (txt){
+                    WriterController.text = txt;
+                  },),
                   SizedBox(width: 15),
                 ],
               )
           ),
           SizedBox(height: 15),
-          Container(
-            height: 60,
-            width: size.width,
-            color: login_background,
-            child: Center(
-              child: Text('تمام',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w500)),
+          InkWell(
+            hoverColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: (){
+              WriterController.AddStory();
+              print(WriterController.writer_id);
+            },
+            child: Container(
+              height: 60,
+              width: size.width,
+              color: login_background,
+              child: Center(
+                child: Text('تمام',style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.w500)),
+              ),
             ),
           )
         ],

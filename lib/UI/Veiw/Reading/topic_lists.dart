@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Headers/main_header.dart';
 import 'package:univercity/UI/Component/Reading/topic_list_item.dart';
@@ -21,8 +22,8 @@ class TopicsListPage extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        for(int i=0;i<10;i++)
-                          TopicListItem()
+                        for(var story in AdminController.storiesList)
+                          TopicListItem(story)
                       ],
                     ),
                   ),

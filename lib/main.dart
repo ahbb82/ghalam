@@ -25,10 +25,6 @@ class MyApp extends StatelessWidget {
       statusBarBrightness: Brightness.light,
     ));
 
-
-
-
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -66,7 +62,7 @@ class MyApp extends StatelessWidget {
       //   print('2');
       // },
       routes: {
-        '/':(context)=>AdminList(),
+        '/':(context)=>Splash(),
       },
     );
   }

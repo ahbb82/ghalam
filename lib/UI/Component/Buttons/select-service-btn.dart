@@ -19,7 +19,7 @@ class SelectServicesBtn extends StatelessWidget {
         width: 200,
         height: 70,
         decoration: BoxDecoration(
-          color: CupertinoColors.activeBlue,
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(width: 1,color: Colors.black)
         ),

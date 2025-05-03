@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:univercity/Controller/auth_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Buttons/btn.dart';
 import 'package:univercity/UI/Component/Inputs/input.dart';
@@ -15,9 +16,9 @@ class RegisterForm extends StatelessWidget {
       height: 280,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(width: 1,color: Colors.black),
-        color: login_background
+        color: Colors.transparent
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,6 +34,9 @@ class RegisterForm extends StatelessWidget {
                     height: 50,
                     radius: 15,
                     hint: "نام کاربری",
+                    onChange: (text){
+                      AuthController.registerUsername = text;
+                    },
                   )
               )
             ],
@@ -49,6 +53,9 @@ class RegisterForm extends StatelessWidget {
                     height: 50,
                     radius: 15,
                     hint: 'رمز ورود',
+                    onChange: (text){
+                      AuthController.registerPassword = text;
+                    },
                   )
               )
             ],
@@ -57,8 +64,11 @@ class RegisterForm extends StatelessWidget {
           RadioGroup(
             true,
             {
-              'خواننده': true,
-              'نویسنده': false,
+              'نویسنده': true,
+              'خواننده': false,
+            },
+            onChange: (value){
+              AuthController.registerIswrite = value;
             },
           ),
           Spacer(),
@@ -68,6 +78,7 @@ class RegisterForm extends StatelessWidget {
             height: 50,
             color: Colors.white,
             text: 'ثبت نام',
+            onClick: () =>  AuthController.Register(),
           )
         ],
       ),

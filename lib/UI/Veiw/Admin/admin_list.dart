@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:univercity/Controller/admin_controller.dart';
 import 'package:univercity/Public/colors.dart';
 import 'package:univercity/UI/Component/Admin/admin_list_btn.dart';
+import 'package:univercity/UI/Veiw/Admin/story_list.dart';
 import 'package:univercity/UI/Veiw/Admin/users_list.dart';
 import 'package:univercity/UI/Veiw/Writing/writed_list.dart';
 
@@ -20,11 +23,11 @@ class AdminList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AdminListBtn('کاربران', (){
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>UsersList()));
+              AdminController.GetUsers();
             }),
-            AdminListBtn('داستان ها', (){
-              Navigator.push(context, MaterialPageRoute(builder: (builder)=>WritedList(false)));
-              print('object');
+            AdminListBtn('داستان ها', ()async{
+              await AdminController.GetStories();
+              Get.to(StoryList(false));
             }
             ),
           ],
